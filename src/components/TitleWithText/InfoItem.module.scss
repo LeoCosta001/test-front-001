@@ -1,0 +1,49 @@
+/************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/******
+* CSS *
+*******/
+.main {
+  font-size: 1rem;
+  display: flex;
+  opacity: 0.8;
+
+  & ~ & {
+    margin-top: 15px;
+  }
+
+  & .info__field {
+    font-weight: bold;
+  }
+
+  & .info__text__edit {
+    background-color: $LIGHT-BG-Default_01;
+    width: 100%;
+    border-bottom: solid 2px $LIGHT-BD-Default_01;
+    border-radius: 2px;
+    padding: 2px 0px 1px 0px;
+    transition: 0.1s;
+
+    &.dark--theme {
+      background-color: $DARK-BG-Default_01;
+      border-bottom: solid 2px $DARK-BD-Default_02;
+      padding: 2px 0px;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $LIGHT-BD-Main_01;
+    }
+  }
+
+  & .info__text {
+    font-weight: normal;
+  }
+
+  &.empty__field {
+    opacity: 0.5;
+  }
+}

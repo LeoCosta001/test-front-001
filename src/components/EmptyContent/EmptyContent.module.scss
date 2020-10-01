@@ -1,0 +1,51 @@
+/************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/defaultSize.scss';
+@import '../../style/mixins/animations.scss';
+
+/******
+* CSS *
+*******/
+.main {
+  @include DefaultSize_ViewContent(100%);
+  @include lightInEffect(none, lightInEffect001, 0.5s);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & div ~ div {
+    margin-top: 10px;
+  }
+}
+
+.icon {
+  margin-bottom: 20px;
+  width: 150px;
+  height: 150px;
+
+  &.warning svg {
+    fill: $FLAT-Orange;
+  }
+
+  &.error svg {
+    fill: $FLAT-Red;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.5rem;
+  text-align: center;
+}

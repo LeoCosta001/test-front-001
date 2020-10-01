@@ -1,0 +1,38 @@
+/*************
+ * Variáveis *
+ *************/
+@import "../../style/variables/layoutColors.scss";
+
+/*********
+* Mixins *
+**********/
+@import "../../style/mixins/defaultSize.scss";
+
+/*******
+* CSS *
+*******/
+.main {
+  background-color: $LIGHT-BG-Default_01;
+  min-height: 60px;
+  width: 100%;
+  border-top: solid 1px $LIGHT-BD-Default_01;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+    border-top: solid 1px $DARK-BD-Default_01;
+  }
+}
+
+.content {
+  color: $LIGHT-LT-Light_01;
+  font-size: 1rem;
+
+  &.dark--theme {
+    color: $DARK-LT-Light_01;
+  }
+}

@@ -1,0 +1,59 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/defaultSize.scss';
+@import '../../style/mixins/animations.scss';
+@import '../../style/mixins/breakpoints.scss';
+
+/******
+* CSS *
+*******/
+.main {
+  @include DefaultSize_ViewContent();
+  @include breakpoints(custom, 820px) {
+    width: 90%;
+  }
+}
+
+.header__container {
+  @include lightInEffect(none, lightInEffect001, 0.5s);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.suppliers__container {
+  @include lightInEffect(left, lightInEffect002);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .suppliers__block {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+// Estado de "Carregando lista de suplimentos"
+.main__loading__container {
+  @include DefaultSize_ViewContent(100%);
+  margin: auto;
+
+  & .loading__icon__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include lightInEffect(none, lightInEffect003, 0.5s);
+
+    & * {
+      opacity: 0.6;
+    }
+  }
+}

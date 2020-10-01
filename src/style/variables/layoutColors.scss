@@ -1,0 +1,78 @@
+// OBS: Cores não utilizadas começam com underline "_"
+
+/********************
+ * Cores Principais *
+ ********************/
+// OBS: Estas cores só são usadas aqui neste arquivo como referência
+$Primary: #14c8bd;
+$Primary--light: #38e4d8;
+$Primary--20: rgba(20, 200, 188, 0.2);
+$Secondary: #454545;
+$Tertiary: #f8f8f8;
+
+/******************
+ * Flat UI Colors *
+ ******************/
+ // OBS: Estas cores podem ser usadas tanto aqui como referência quanto diretamente no elemento
+$White: #ffffff;
+$FLAT-Default: #19b6ab;
+$FLAT-Default--Hover: #14c8bd;
+$FLAT-Red: #c0392b;
+$FLAT-Red--Hover: #f44237;
+$FLAT-Orange: #f39c12;
+$FLAT-Orange--Hover: #f39c12;
+$FLAT-Green: #27ae60;
+$FLAT-Green--Hover: #2ecc71;
+
+/**************
+ * Tema Claro *
+ *************/
+// OBS: As cores aplicadas nos elementos são feitas inicialmente aqui ja que o tema claro é o tema padrão
+
+// Cores de fundo
+$LIGHT-BG-Default_01: #fff;
+$LIGHT-BG-Default_02: $Tertiary;
+$LIGHT-BG-Main_01: #f0f3f8;
+$LIGHT-BG-Main_02: #e6fffd;
+
+// Cores de Texto
+$LIGHT-LT-Default_01: $Secondary;
+$LIGHT-LT-Main_01: $Primary;
+$LIGHT-LT-Title_01: $Tertiary;
+$LIGHT-LT-Title_02: $Primary;
+$LIGHT-LT-Light_01: #747474;
+$LIGHT-LT-Error_01: $FLAT-Red--Hover;
+
+// Cores de Textos de Link
+$LIGHT-LT-Link-Default_01: $Primary;
+
+// Cores de Bordas
+$LIGHT-BD-Main_01: $Primary;
+$LIGHT-BD-Main_01--20: $Primary--20;
+$LIGHT-BD-Default_01: #d3d3d3;
+
+// Fundo de Botões
+$LIGHT-BT-Default_01: $Primary;
+$LIGHT-BT-Main_01: $Primary;
+$LIGHT-BT-Main_01--hover: $Primary--light;
+
+/***************
+ * Tema Escuro *
+ ***************/
+// OBS: Estas cores só são feitas conforme a necessidade ja que o tema claro é o tema padrão
+
+// Cores de fundo
+$DARK-BG-Default_01: #303030;
+$DARK-BG-Main_01: #424242;
+$DARK-BG-Main_02: #39706c;
+
+// Cores de Texto
+$DARK-LT-Default_01: $Tertiary;
+$DARK-LT-Light_01: #8f8f8f;
+
+// Cores de Textos de Link
+$DARK-LT-Title_01: #555555;
+
+// Cores de Bordas
+$DARK-BD-Default_01: #424242;
+$DARK-BD-Default_02: #8f8f8f;

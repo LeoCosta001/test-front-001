@@ -1,0 +1,91 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/animations.scss';
+@import '../../style/mixins/breakpoints.scss';
+
+/*******
+* CSS *
+*******/
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.photo__container {
+  flex: 1;
+  background: url(../../assets/photos/web-dev.jpg) no-repeat center;
+  background-size: cover;
+
+  @include breakpoints(small) {
+    display: none;
+  }
+}
+
+.content__container {
+  @include lightInEffect(bottom, lightInEffect001, 0.8s, 60px);
+  padding: 50px 0px;
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.2s;
+
+  & .content {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & .form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & .form__item {
+        width: 100%;
+
+        & ~ .form__item {
+          margin-top: 15px;
+        }
+
+        & .form__warning {
+          color: $LIGHT-LT-Error_01;
+          height: 15px;
+          margin: 5px 0px;
+        }
+      }
+
+      & .form__button {
+        width: 100%;
+        margin-top: 35px;
+      }
+    }
+
+    & .link {
+      font-size: 1.1rem;
+      text-decoration: underline;
+      transition: 0.1s;
+
+      &:hover {
+        color: $LIGHT-LT-Link-Default_01;
+      }
+    }
+
+    @include breakpoints(extra-small) {
+      width: 90%;
+    }
+  }
+
+  @include breakpoints(extra-small) {
+    width: 100%;
+    padding: 50px 0px;
+  }
+}

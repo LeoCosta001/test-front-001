@@ -1,0 +1,14 @@
+// Fontes
+@import './fonts/fontsImport.scss';
+
+// Variaveis
+@import './variables/layoutColors.scss';
+
+// Normalizar estilo
+@import './global/normalize.scss';
+
+// Reset de estilo
+@import './global/personalReset.scss';
+
+// Aplicação de estilos globais
+@import './global/globalStyle.scss';

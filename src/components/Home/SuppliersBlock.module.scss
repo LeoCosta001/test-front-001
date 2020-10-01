@@ -1,0 +1,105 @@
+/************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/breakpoints.scss';
+
+/******
+* CSS *
+*******/
+
+// Componente "SuppliersBlock"
+.main {
+  cursor: pointer;
+  background-color: $LIGHT-BG-Default_02;
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  border: solid 1px $LIGHT-BD-Main_01;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+
+  & hr {
+    margin: 15px 0px;
+  }
+
+  &:hover {
+    background-color: $LIGHT-BG-Main_02;
+  }
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+    border: solid 1px transparent;
+
+    &:hover {
+      background-color: $DARK-BG-Main_02;
+      border: solid 1px $LIGHT-BD-Main_01;
+    }
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.info__container {
+  margin: 5px 0px;
+
+  & table {
+    width: 100%;
+
+    & tr {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      & td {
+        width: 47.5%;
+      }
+
+      @include breakpoints(extra-small) {
+        flex-direction: column;
+
+        & td {
+          width: 100%;
+
+          & ~ td {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Componente "infoItem"
+.infoItem__container {
+  font-size: 1rem;
+  display: flex;
+  opacity: 0.8;
+
+  & ~ & {
+    margin-top: 10px;
+  }
+
+  & .infoItem__field {
+    font-weight: bold;
+  }
+
+  & .infoItem__text {
+    font-weight: normal;
+    margin-left: 10px;
+  }
+
+  &.empty__field {
+    opacity: 0.5;
+  }
+}

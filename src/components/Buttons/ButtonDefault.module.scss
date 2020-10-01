@@ -1,0 +1,25 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*******
+* CSS *
+*******/
+.main {
+  background-color: $FLAT-Default;
+  color: $White;
+  font-size: 1.5rem;
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
+  transition: 0.1s all;
+
+  &:hover {
+    background-color: $FLAT-Default--Hover;
+  }
+
+  &:active {
+    background-color: $FLAT-Default;
+  }
+}

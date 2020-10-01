@@ -1,0 +1,113 @@
+/*************
+ * Variáveis *
+ *************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/breakpoints.scss';
+
+/*******
+ * CSS *
+ *******/
+.main {
+  position: relative;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    & .info__dropdown__container {
+      display: flex;
+    }
+  }
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+    border-bottom: solid 1px $DARK-BD-Default_01;
+  }
+}
+
+.info__button {
+  background-color: transparent;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  transition: 0.2s;
+
+  &::after {
+    content: ' \25BC';
+    font-size: 1rem;
+  }
+
+  &:hover {
+    color: $LIGHT-LT-Link-Default_01;
+  }
+
+  @include breakpoints(small) {
+    display: none;
+  }
+}
+
+.menu__icon {
+  display: none;
+  @include breakpoints(small) {
+    display: flex;
+  }
+}
+
+.info__dropdown__container {
+  background-color: $LIGHT-BG-Default_01;
+  min-width: 200px;
+  margin-top: 20px;
+  border: solid 1px $LIGHT-BD-Default_01;
+  border-radius: 4px;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+
+  & * {
+    font-size: 1.1rem;
+  }
+
+  & .dropdown__item {
+    background-color: transparent;
+    white-space: nowrap;
+    padding: 12.5px;
+    display: flex;
+
+    & ~ .dropdown__item {
+      border-top: solid 1px $LIGHT-BD-Default_01;
+    }
+
+    &.dropdown--logout {
+      color: #f44237;
+    }
+
+    &:hover {
+      background-color: $LIGHT-BT-Default_01;
+    }
+
+    &.dark--theme {
+      &:hover {
+        background-color: $DARK-BG-Main_02;
+      }
+
+      &.dropdown--logout {
+        color: #f75d55;
+      }
+    }
+  }
+
+  &:hover {
+    display: flex;
+  }
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+  }
+}

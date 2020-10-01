@@ -1,0 +1,16 @@
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/animations.scss';
+
+/*******
+* CSS *
+*******/
+
+.icon__effect__rotation__right {
+  @include rotateEffect(rotateEffect001, right, 2s);
+}
+
+.icon__effect__rotation__left {
+  @include rotateEffect(rotateEffect002, left, 2s);
+}

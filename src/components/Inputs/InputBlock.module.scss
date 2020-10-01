@@ -1,0 +1,50 @@
+/*************
+* Variáveis *
+*************/
+@import "../../style/variables/layoutColors.scss";
+
+/*******
+* CSS *
+*******/
+.main__input {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.input {
+  background-color: $LIGHT-BG-Main_01;
+  border: solid 1px $LIGHT-BG-Main_01;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  transition: 0.1s;
+
+  &:hover {
+    border-color: $LIGHT-BD-Main_01;
+  }
+
+  &:focus {
+    background-color: $LIGHT-BD-Main_01--20;
+    border-color: $LIGHT-BD-Main_01;
+  }
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+    border-color: $DARK-BG-Main_01;
+
+    &:hover {
+      border-color: $LIGHT-BD-Main_01;
+    }
+
+    &:focus {
+      background-color: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*******
+* CSS *
+*******/
+.main {
+  font-size: 3.5em;
+  font-family: 'Spectral';
+  font-weight: bold;
+  height: max-content;
+  position: relative;
+
+  &::after {
+    content: '';
+    background: $LIGHT-LT-Main_01;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: -7px;
+    z-index: -1;
+  }
+
+  &.dark--theme {
+    color: $LIGHT-LT-Main_01;
+    &::after {
+      background: $DARK-LT-Title_01;
+    }
+  }
+}

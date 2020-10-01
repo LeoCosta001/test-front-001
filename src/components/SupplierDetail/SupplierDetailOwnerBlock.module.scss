@@ -1,0 +1,52 @@
+/************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/breakpoints.scss';
+
+/******
+* CSS *
+*******/
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  & hr {
+    margin: 15px 0px;
+  }
+
+  
+  & .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.info__container {
+  background-color: $LIGHT-BG-Default_02;
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  border: solid 1px $LIGHT-BD-Main_01;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  margin-top: 10px;
+
+  & .info {
+    margin: 5px 0px;
+  }
+
+  &.dark--theme {
+    background-color: $DARK-BG-Main_01;
+    border: solid 1px transparent;
+  }
+}

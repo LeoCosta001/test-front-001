@@ -1,0 +1,120 @@
+// Aplica animação de rotação sobre um elemento
+@mixin rotateEffect(
+  $frameName: rotateEffect000,
+  $direction: right,
+  $duration: 2s
+) {
+  @if $direction != left and $direction != right {
+    @error '[@mixin rotateEffect] o parâmetro "#{$direction}" é um valor inválido. Os valores válidos são "left" ou "right" (OBS: O padrão é "right")';
+  }
+
+  animation: $frameName $duration linear infinite;
+  $from: '';
+  $to: '';
+
+  @if $direction == right {
+    $from: rotate(0deg);
+    $to: rotate(359deg);
+  } @else if $direction == left {
+    $from: scaleX(-1) rotate(0deg);
+    $to: scaleX(-1) rotate(359deg);
+  }
+
+  @keyframes #{$frameName} {
+    from {
+      transform: $from;
+    }
+    to {
+      transform: $to;
+    }
+  }
+}
+
+// Fazer Elemento aparecer suavemente
+@mixin lightInEffect(
+  $direction: none,
+  $frameName: lightEffect000,
+  $duration: 0.3s,
+  $distance: 20px
+) {
+  @if $direction !=
+    left and
+    $direction !=
+    right and
+    $direction !=
+    top and
+    $direction !=
+    bottom and
+    $direction !=
+    none
+  {
+    @error '[@mixin lightEffect] o parâmetro "#{$direction}" é um valor inválido. Os valores válidos são "none", "left", "right", "top" e "bottom" (OBS: O padrão é "none")';
+  }
+
+  opacity: 0;
+
+  @if $direction == left {
+    transform: translateX(-$distance);
+  } @else if $direction == right {
+    transform: translateX($distance);
+  } @else if $direction == top {
+    transform: translateY(-$distance);
+  } @else if $direction == bottom {
+    transform: translateY($distance);
+  } @else if $direction == none {
+    transform: translateY(0px);
+  }
+
+  animation: $frameName $duration forwards;
+
+  @keyframes #{$frameName} {
+    to {
+      opacity: initial;
+      transform: initial;
+    }
+  }
+}
+
+// Fazer Elemento desaparecer suavemente
+@mixin lightOutEffect(
+  $direction: none,
+  $frameName: lightEffect000,
+  $duration: 0.3s,
+  $distance: 20px
+) {
+  @if $direction !=
+    left and
+    $direction !=
+    right and
+    $direction !=
+    top and
+    $direction !=
+    bottom and
+    $direction !=
+    none
+  {
+    @error '[@mixin lightEffect] o parâmetro "#{$direction}" é um valor inválido. Os valores válidos são "none", "left", "right", "top" e "bottom" (OBS: O padrão é "none")';
+  }
+
+  opacity: 1;
+  transform: initial;
+
+  animation: $frameName $duration forwards;
+
+  @keyframes #{$frameName} {
+    to {
+      opacity: 0;
+      @if $direction == left {
+        transform: translateX(-$distance);
+      } @else if $direction == right {
+        transform: translateX($distance);
+      } @else if $direction == top {
+        transform: translateY(-$distance);
+      } @else if $direction == bottom {
+        transform: translateY($distance);
+      } @else if $direction == none {
+        transform: translateY(0px);
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*******
+* CSS *
+*******/
+.main__button {
+  color: $White;
+  font-size: 1.2rem;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  padding: 5px 15px;
+  transition: 0.1s all;
+
+  // Estilo padrão
+  &.default {
+    background-color: $FLAT-Default;
+
+    &:hover {
+      background-color: $FLAT-Default--Hover;
+    }
+
+    &:active {
+      background-color: $FLAT-Default;
+    }
+  }
+
+  // Estilo verde
+  &.green {
+    background-color: $FLAT-Green;
+
+    &:hover {
+      background-color: $FLAT-Green--Hover;
+    }
+
+    &:active {
+      background-color: $FLAT-Green;
+    }
+  }
+
+  // Estilo vermelho
+  &.red {
+    background-color: $FLAT-Red;
+
+    &:hover {
+      background-color: $FLAT-Red--Hover;
+    }
+
+    &:active {
+      background-color: $FLAT-Red;
+    }
+  }
+}

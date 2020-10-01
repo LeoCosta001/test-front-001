@@ -1,0 +1,48 @@
+body {
+  background-color: $LIGHT-BG-Default_01;
+  font-size: 10pt;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  & #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & * {
+    color: $LIGHT-LT-Default_01;
+    font-family: "Open Sans";
+  }
+
+  & button,
+  & input[type="button"] {
+    cursor: pointer;
+  }
+
+  & input {
+    background-color: transparent;
+  }
+
+  * hr {
+    border-bottom: solid 1px $LIGHT-BD-Default_01;
+    margin: 10px 0px;
+  }
+
+  /***************
+   * Tema Escuro *
+   ***************/
+
+  &.global__dark__theme {
+    background-color: $DARK-BG-Default_01;
+
+    & * {
+      color: $DARK-LT-Default_01;
+    }
+  }
+}

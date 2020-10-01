@@ -1,0 +1,22 @@
+/*************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*******
+* CSS *
+*******/
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  & hr {
+    width: 100%;
+    border: none;
+  }
+}
+
+.text {
+  margin: 0px 10px;
+}

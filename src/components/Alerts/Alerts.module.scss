@@ -1,0 +1,118 @@
+/************
+* Variáveis *
+*************/
+@import '../../style/variables/layoutColors.scss';
+
+/*********
+* Mixins *
+**********/
+@import '../../style/mixins/animations.scss';
+@import '../../style/mixins/breakpoints.scss';
+
+/******
+* CSS *
+*******/
+
+// Componente "Alerts"
+.main__alerts {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9000;
+}
+
+// Componente "AlertButton"
+.main__alerts__block {
+  background-color: $FLAT-Green;
+  font-size: 1rem;
+  width: 350px;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 4px 1px rgba(70, 70, 70, 0.5);
+  @include lightInEffect(top, lightInEffect001, 0.5s, 40px);
+
+  & * {
+    color: $White;
+  }
+
+  & .icon__container {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  & .text__container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    & p:first-child {
+      font-weight: bold;
+    }
+
+    & p ~ p {
+      margin-top: 5px;
+    }
+  }
+
+  & .close__container {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: $FLAT-Green--Hover;
+    }
+  }
+
+  &.success {
+    background-color: $FLAT-Green;
+    & .close__container {
+      &:hover {
+        background-color: $FLAT-Green--Hover;
+      }
+    }
+  }
+
+  &.warning {
+    background-color: $FLAT-Orange;
+    & .close__container {
+      &:hover {
+        background-color: $FLAT-Orange--Hover;
+      }
+    }
+  }
+
+  &.error {
+    background-color: $FLAT-Red;
+    & .close__container {
+      &:hover {
+        background-color: $FLAT-Red--Hover;
+      }
+    }
+  }
+
+  @include breakpoints(small) {
+    width: 350px;
+    padding: 10px;
+  }
+
+  @include breakpoints(extra-small) {
+    font-size: 0.9rem;
+    width: 300px;
+  }
+}
+
+.out--effect {
+  @include lightOutEffect(right, lightOutEffect001, 0.5s, 40px);
+}

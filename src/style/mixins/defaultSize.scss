@@ -1,0 +1,7 @@
+/**************************************
+ * Tamanho minímo do conteúdo da View *
+ **************************************/
+@mixin DefaultSize_ViewContent($width: 750px, $margin: 30px auto) {
+  width: $width;
+  margin: $margin;
+}
